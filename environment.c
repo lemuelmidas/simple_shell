@@ -6,8 +6,8 @@
  */
 void current_env(char **env)
 {
-  int i;
+	int i;
 
-  for (i=0; env[i] ; i++)
-    _puts(env[i]);
+	for (i = 0; env[i] ; i++)
+	_puts(env[i]);
 }
