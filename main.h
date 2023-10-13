@@ -12,6 +12,16 @@
 #include <limits.h>
 #include <errno.h>
 
+#define READ_BUF_SIZE 1024
+#define WRITE_BUF_SIZE 1024
+#define BUF_FLUSH -1
+#define USE_GETLINE 0
+#define USE_STRTOK 0
+#define CONVERT_LOWERCASE	1
+#define CONVERT_UNSIGNED	2
+#define HIST_FILE	".simple_shell_history"
+#define HIST_MAX	5000
+
 /* environment.c */
 void current_env(char **env);
 
@@ -45,5 +55,6 @@ char **passed_path(char *foundpath);
 int child_process(char **av, char **args, char **env, int status_main, int cnt);
 char **execute_path(char **env);
 
+_calloc(sizeof(char *), bufsize);
 
 #endif
