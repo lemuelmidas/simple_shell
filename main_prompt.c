@@ -16,19 +16,19 @@ int main_prompt(int ac __attribute__((unused)), char **av, char **env)
 	char **args, **path;
 	int count = 0, status = 0;
 	(void) av;
-	signal(SIGINT, handle_signal);
+	signal(SIGINT, signal_handler);
 	while (1)
 	{
 		prompt();
 
-		line = read_input();
+		line = standard_input();
 
-		args = sparse_str(line, env);
+		args = seperate_str(line, env);
 
 		if ((_strcmp(args[0], "\n") != 0) && (_strcmp(args[0], "env") != 0))
 		{
 			count += 1;
-			path = search_path(env);
+			path = execute_path(env);
 			status = _stat(args, path);
 			child_process(av, args, env, status, count);
 		}

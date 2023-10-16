@@ -12,7 +12,7 @@ char **passed_path(char *foundpath)
 {
 	int size = TOK_BUFSIZE, i = 0;
 	char *copy_path = NULL, *tokens = NULL, *sparse = ":=";
-	char **dir = _calloc(sizeof(char *), size);
+	char **dir = allocate_memory(sizeof(char *), size);
 
 	if (foundpath == NULL)
 	{
@@ -67,7 +67,7 @@ int child_process(char **av, char **args, char **env, int status_main, int cnt)
 	{
 		if (execve(args[0], args, env) == -1)
 		{
-			_error(av[0], cnt, args[0]);
+			output_error(av[0], cnt, args[0]);
 			free(args);
 			exit(1);
 		}
@@ -92,7 +92,7 @@ int child_process(char **av, char **args, char **env, int status_main, int cnt)
 
 char **execute_path(char **env)
 {
-	int position;
+	int location;
 	char **token_path;
 
 	for (location = 0; env[location] != NULL ; location++)

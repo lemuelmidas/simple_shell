@@ -55,6 +55,6 @@ char **passed_path(char *foundpath);
 int child_process(char **av, char **args, char **env, int status_main, int cnt);
 char **execute_path(char **env);
 
-_calloc(sizeof(char *), bufsize);
+void *allocate_memory(unsigned int nmemb, unsigned int size);
 
 #endif
