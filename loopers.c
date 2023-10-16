@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * read_input - stores whatever is passed to it as standard input
+ * standard_input - stores whatever is passed to it as standard input
  * Return: string containing the input
  */
 char *standard_input(void)
@@ -77,12 +77,12 @@ char **seperate_str(char *line, char **env)
   
   if ((_strcmp(tokens[0], "exit") == 0) && tokens[1] == NULL)
     {
-      free(line); /*LIBERA MEMORIA Y SALE DEL PROGRAMA*/
+      free(line);
       free(tokens);
       exit(0);
     }
   if ((_strcmp(tokens[0], "env") == 0) && tokens[1] == NULL)
-    current_env(env);      /*Encuentra el enviroment*/
+    current_env(env);
 
   return (tokens);
 }
