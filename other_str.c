@@ -3,6 +3,7 @@
 /**
  * _strdup - to copy a string from one place to another
  * @str: the array
+ *
  * Return: pointer of sting copied
  */
 
@@ -12,13 +13,13 @@ char *_strdup(char *str)
 	char *s = NULL;
 
 	if (str == NULL)
-	return (0);
+		return (0);
 	for (a = 0; str[a]; a++)
 		;
 	a++;
 	s = malloc(a * sizeof(char *));
 	if (!s)
-	return (NULL);
+		return (NULL);
 	for (b = 0; b < a; b++)
 	{
 		s[b] = str[b];

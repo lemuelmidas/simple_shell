@@ -13,7 +13,7 @@ void _puts(char *str)
 
 	for (a = 0 ; str[a] != '\0' ; a++)
 	{
-	_putchar(str[a]);
+		_putchar(str[a]);
 	}
 	_putchar('\n');
 }
@@ -23,6 +23,7 @@ void _puts(char *str)
  * @s: integer to be used
  * Return: length of string
  */
+
 int _strlen(const char *s)
 {
 	int i;
@@ -96,10 +97,12 @@ char *str_concat(char *c1, char *c2)
  * _strcmp - to compare two strings
  * @c1: string one
  * @c2: string two
+ *
  * Return: returns an integer less  than,  equal  to,  or
  * greater  than zero if s1 is found, respectively, to be
  * less than, to match, or be greater than s2.
  */
+
 int _strcmp(char *c1, char *c2)
 {
 	char *n1 = c1;

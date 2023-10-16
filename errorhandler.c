@@ -9,7 +9,7 @@
 
 void signal_handler(int signal)
 {
-	char *prompt = {"\n{^_^} "};
+	char *prompt = {"\nJustineSam$ "};
 	(void) signal;
 
 	write(STDOUT_FILENO, prompt, _strlen(prompt));
